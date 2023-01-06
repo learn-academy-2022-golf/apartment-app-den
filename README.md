@@ -121,7 +121,7 @@ yarn add react-router-dom
 **app/javascript/components/App.js**
 
 ```javascript
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 ```
 
 ### Reactstrap Config
@@ -168,25 +168,26 @@ yarn test
 rspec spec
 ```
 
-**The following code will not work but is here to get your started**
+**The following code will not work but is here to get you started**
+
 ```ruby
 require 'rails_helper'
 RSpec.describe "Apartments", type: :request do
   describe "GET /index" do
     it "gets a list of apartments " do
-    
+
       user = User.where(email: 'test@test.test').first_or_create?(password: '12345678', password_confirmation: '12345678')
       user.create_apartment!(
         street: string,
         city:string,
         state:string,
         manager:string,
-        email:string, 
-        price:string, 
-        bedrooms:integer, 
-        bathrooms:integer, 
+        email:string,
+        price:string,
+        bedrooms:integer,
+        bathrooms:integer,
         pets:string,
-        image:text, 
+        image:text,
         user_id:integer
       )
       # Make a request
@@ -198,6 +199,7 @@ RSpec.describe "Apartments", type: :request do
   end
 end
 ```
+
 ### Apartment Data Specs
 
 Part of your responsibility will be to build out robust tests both for models and for requests.
