@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-
+import mockApartments from "./mockApartments";
 import ApartmentEdit from "./pages/ApartmentEdit";
 import ApartmentIndex from "./pages/ApartmentIndex";
 import ApartmentNew from "./pages/ApartmentNew";
@@ -11,9 +11,9 @@ import ApartmentShow from "./pages/ApartmentShow";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
-const App = () => {
-  const [apartments, setApartments] = useState([]);
-
+const App = (props) => {
+  const [apartments, setApartments] = useState(mockApartments);
+  console.log(mockApartments);
   useEffect(() => {
     readApartments();
   }, []);
