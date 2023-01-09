@@ -13,7 +13,7 @@ import NotFound from "./pages/NotFound";
 
 const App = (props) => {
   const [apartments, setApartments] = useState(mockApartments);
-  console.log(mockApartments);
+
   useEffect(() => {
     readApartments();
   }, []);

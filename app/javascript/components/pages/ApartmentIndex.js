@@ -10,10 +10,10 @@ import {
   Button,
 } from "reactstrap";
 
-const ApartmentIndex = ({ mockApartments }) => {
+const ApartmentIndex = ({ apartments }) => {
   return (
     <div>
-      {mockApartments?.map((apartments, index) => {
+      {apartments?.map((apartments, index) => {
         return (
           <>
             <Card
@@ -23,11 +23,11 @@ const ApartmentIndex = ({ mockApartments }) => {
             >
               <img alt="Card" src="https://picsum.photos/300/200" />
               <CardBody>
-                <CardTitle tag="h5">Card Title</CardTitle>
+                <CardTitle tag="h5">{apartments.image}</CardTitle>
                 <CardText>This is some text within a card body.</CardText>
               </CardBody>
               <ListGroup flush>
-                <ListGroupItem>Price:{mockApartments.price}</ListGroupItem>
+                <ListGroupItem>Price:{apartments.price}</ListGroupItem>
                 <ListGroupItem>A second item</ListGroupItem>
                 <ListGroupItem>And a third item</ListGroupItem>
               </ListGroup>
