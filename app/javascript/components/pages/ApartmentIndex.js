@@ -21,19 +21,23 @@ const ApartmentIndex = ({ apartments }) => {
                 width: "18rem",
               }}
             >
-              <img alt="Card" src="https://picsum.photos/300/200" />
+              <img alt="Card" src={apartments.image} />
               <CardBody>
-                <CardTitle tag="h5">{apartments.image}</CardTitle>
-                <CardText>This is some text within a card body.</CardText>
+                <CardTitle tag="h5">Price: ${apartments.price}</CardTitle>
+                <CardText>
+                  {apartments.street}
+                  {apartments.city}
+                  {apartments.state}
+                </CardText>
               </CardBody>
               <ListGroup flush>
-                <ListGroupItem>Price:{apartments.price}</ListGroupItem>
-                <ListGroupItem>A second item</ListGroupItem>
-                <ListGroupItem>And a third item</ListGroupItem>
+                <ListGroupItem>Bedrooms: {apartments.bedrooms}</ListGroupItem>
+                <ListGroupItem>Bathrooms: {apartments.bathrooms}</ListGroupItem>
+                <ListGroupItem>Pets Allowed?: {apartments.pets}</ListGroupItem>
               </ListGroup>
               <CardBody>
-                <CardLink href="#">Card Link</CardLink>
-                <CardLink href="#">Another Card Link</CardLink>
+                <CardLink href="#">View</CardLink>
+                <CardLink href="#">Contact</CardLink>
               </CardBody>
             </Card>
           </>
