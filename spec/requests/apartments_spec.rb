@@ -5,7 +5,11 @@ RSpec.describe "Apartments", type: :request do
     describe "GET /index" do
 
         it "gets a list of aparments" do
-          Apartment.create(
+
+          user = User.create(email: "test@example.com", password: "password", password_confirmation: "password")
+
+          user.apartments.create(
+            user_id: nil,
             street: 'Clean street',
             city: 'nice city',
             state: 'nice state',
@@ -18,8 +22,8 @@ RSpec.describe "Apartments", type: :request do
             image: "www.imageurl.com"
           )
 
-          get "/apartmentindex"
-          
+          get "/apartments"
+
           apartment = JSON.parse(response.body)
     
           expect(response).to have_http_status(200)
