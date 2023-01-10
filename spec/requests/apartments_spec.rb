@@ -9,7 +9,6 @@ RSpec.describe "Apartments", type: :request do
           user = User.create(email: "test@example.com", password: "password", password_confirmation: "password")
 
           user.apartments.create(
-            user_id: nil,
             street: 'Clean street',
             city: 'nice city',
             state: 'nice state',
