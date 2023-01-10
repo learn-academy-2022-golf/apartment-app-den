@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { useNavigate } from "react-router-dom"
 
-const ApartmentNew = ( { createApartment }) => {
+const ApartmentNew = () => {
 
   const navigate = useNavigate()
 
@@ -25,7 +25,7 @@ const ApartmentNew = ( { createApartment }) => {
   }
 
   const handleSubmit = () => {
-    createApartment(newApartment)
+    setNewApartment(newApartment)
     console.log(newApartment)
     navigate("/apartmentindex")
   }
@@ -72,12 +72,12 @@ const ApartmentNew = ( { createApartment }) => {
           </FormGroup>
 
           <FormGroup>
-            <Label for="Manager">
+            <Label for="manager">
               Manager
             </Label>
 
             <Input
-              name="Manager"
+              name="manager"
               onChange={handleChange}
               placeholder="Who is the apartment's manager?"
               type="text"
@@ -98,32 +98,32 @@ const ApartmentNew = ( { createApartment }) => {
 
           <FormGroup>
             <Label for="price">
-              Apartment Price
+              Price
             </Label>
             <Input
               name="price"
               onChange={handleChange}
-              placeholder="Price of apartment"
+              placeholder="Price"
               type="text"
             />
           </FormGroup>
 
           <FormGroup>
-            <Label for="Bedrooms">
-              Number of Bedrooms
+            <Label for="bedrooms">
+              Bedrooms
             </Label>
 
             <Input
-              name="Bedrooms"
+              name="bedrooms"
               onChange={handleChange}
-              placeholder="Number of bedrooms"
+              placeholder="Bedrooms"
               type="number"
             />
           </FormGroup>
 
           <FormGroup>
             <Label for="bathrooms">
-              Number of bathrooms
+              Bathrooms
             </Label>
 
             <Input
@@ -136,7 +136,7 @@ const ApartmentNew = ( { createApartment }) => {
 
           <FormGroup>
             <Label for="pets">
-              pets
+              Pets
             </Label>
 
             <Input
@@ -149,7 +149,7 @@ const ApartmentNew = ( { createApartment }) => {
 
           <FormGroup>
             <Label for="image">
-              Apartment Image
+              Image
             </Label>
             <Input
               name="image"
