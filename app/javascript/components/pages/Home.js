@@ -17,7 +17,7 @@ const Home = (props) => {
         <h3>Welcome to Den Apartments</h3>
         <p>An extensive list of Apartments to meet the needs of rental seekers alike.</p>
         <button>
-          <a href="/apartmentindex">
+          <a href="/protectedapartmentindex">
             My Listings
           </a>
         </button>
