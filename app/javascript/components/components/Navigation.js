@@ -38,6 +38,25 @@ const Navigation = ({
             </a>
           </NavItem>
         )}
+        <NavItem>
+          <NavLink to="/apartmentindex" className="nav-link">
+            All Apartments
+          </NavLink>
+        </NavItem>
+        {logged_in && (
+          <NavItem>
+            <a href={"/apartmentindex"} className="nav-link">
+              My Apartments
+            </a>
+          </NavItem>
+        )}
+        {logged_in && (
+          <NavItem>
+            <a href={"/apartmentnew"} className="nav-link">
+              Create an Apartment
+            </a>
+          </NavItem>
+        )}
       </Nav>
     </>
   )
