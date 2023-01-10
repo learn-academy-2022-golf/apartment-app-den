@@ -45,7 +45,7 @@ const Navigation = ({
         </NavItem>
         {logged_in && (
           <NavItem>
-            <a href={"/apartmentindex"} className="nav-link">
+            <a href={"/protectedapartmentindex"} className="nav-link">
               My Apartments
             </a>
           </NavItem>
