@@ -1,7 +1,5 @@
 import React from "react";
-
 import { useParams } from "react-router-dom";
-
 import {
   CardBody,
   Button,
@@ -12,7 +10,6 @@ import {
   ListGroup,
   ListGroupItem,
 } from "reactstrap";
-
 import { NavLink } from "react-router-dom";
 
 const ApartmentShow = ({ apartments }) => {
@@ -20,7 +17,6 @@ const ApartmentShow = ({ apartments }) => {
   const currentApartment = apartments?.find(
     (apartment) => apartment.id === +id
   );
-
   return (
     <div>
       <Card
@@ -31,20 +27,32 @@ const ApartmentShow = ({ apartments }) => {
         <img alt="Sample" src={currentApartment?.image} />
 
         <CardBody>
-          <CardTitle tag="h5">Price:{currentApartment?.price}</CardTitle>
-          <CardText>This is some text within a card body.</CardText>
+          <CardTitle tag="h5">Price: ${currentApartment?.price}</CardTitle>
+          <CardText>
+            <div>
+              <h3>Address</h3>
+
+              <p>street: {currentApartment?.street}</p>
+              <p>city: {currentApartment?.city}</p>
+              <p>state: {currentApartment?.state}</p>
+            </div>
+          </CardText>
         </CardBody>
 
         <ListGroup flush>
-          <ListGroupItem>An Home item</ListGroupItem>
-          <ListGroupItem>A second item</ListGroupItem>
-          <ListGroupItem>And a third item</ListGroupItem>
+          <ListGroupItem>
+            <p>Bedrooms: {currentApartment?.bedrooms}</p>
+            <p>Bathrooms: {currentApartment?.bathrooms}</p>
+          </ListGroupItem>
+          <ListGroupItem>Pets?: {currentApartment?.pets}</ListGroupItem>
+          <ListGroupItem>Manager: {currentApartment?.manager}</ListGroupItem>
         </ListGroup>
 
         <CardBody>
           <NavLink to={`/apartmentupdate/${currentApartment?.id}`}>
             <Button>Update</Button>
           </NavLink>
+          <Button>Contact</Button>
         </CardBody>
       </Card>
     </div>
