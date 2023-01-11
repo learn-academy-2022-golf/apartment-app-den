@@ -6,9 +6,10 @@ import {
   CardText,
   ListGroup,
   ListGroupItem,
-  CardLink,
   Button,
 } from "reactstrap";
+
+import { NavLink } from "react-router-dom";
 
 const ApartmentIndex = ({ apartments }) => {
   return (
@@ -36,8 +37,8 @@ const ApartmentIndex = ({ apartments }) => {
                 <ListGroupItem>Pets Allowed?: {apartments.pets}</ListGroupItem>
               </ListGroup>
               <CardBody>
-                <CardLink href="#">View</CardLink>
-                <CardLink href="#">Contact</CardLink>
+                <NavLink to={`/apartmentshow/${apartments.id}`}>
+                  <Button>Show</Button></NavLink>
               </CardBody>
             </Card>
           </>
