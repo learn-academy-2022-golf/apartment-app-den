@@ -53,6 +53,9 @@ const ApartmentShow = ({ apartments }) => {
             <Button>Update</Button>
           </NavLink>
           <Button>Contact</Button>
+          <NavLink to={"/apartmentindex"}>
+            <Button>Return to Apartments</Button>
+          </NavLink>
         </CardBody>
       </Card>
     </div>
