@@ -11,16 +11,14 @@ import {
 } from "reactstrap";
 
 const ProtectedApartmentIndex = ({ apartments, current_user }) => {
-
-    const current_apartments = apartments?.filter((apartments)=>{
-        return apartments.user_id === current_user.id
-    })
+  const current_apartments = apartments?.filter((apartments) => {
+    return apartments.user_id === current_user.id;
+  });
   return (
     <div>
       {current_apartments?.map((apartments, index) => {
-         
         return (
-          <> 
+          <>
             <Card
               style={{
                 width: "18rem",
@@ -30,9 +28,11 @@ const ProtectedApartmentIndex = ({ apartments, current_user }) => {
               <CardBody>
                 <CardTitle tag="h5">Price: ${apartments.price}</CardTitle>
                 <CardText>
-                  {apartments.street}
-                  {apartments.city}
-                  {apartments.state}
+                  Street: {apartments.street}
+                  <br />
+                  City: {apartments.city}
+                  <br />
+                  State: {apartments.state}
                 </CardText>
               </CardBody>
               <ListGroup flush>

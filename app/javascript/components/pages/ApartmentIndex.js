@@ -25,9 +25,11 @@ const ApartmentIndex = ({ apartments }) => {
               <CardBody>
                 <CardTitle tag="h5">Price: ${apartments.price}</CardTitle>
                 <CardText>
-                  {apartments.street}
-                  {apartments.city}
-                  {apartments.state}
+                  Street: {apartments.street}
+                  <br />
+                  City: {apartments.city}
+                  <br />
+                  State: {apartments.state}
                 </CardText>
               </CardBody>
               <ListGroup flush>
@@ -36,7 +38,7 @@ const ApartmentIndex = ({ apartments }) => {
                 <ListGroupItem>Pets Allowed?: {apartments.pets}</ListGroupItem>
               </ListGroup>
               <CardBody>
-                <CardLink href="#">View</CardLink>
+                <CardLink href="/apartmentshow">View</CardLink>
                 <CardLink href="#">Contact</CardLink>
               </CardBody>
             </Card>
