@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 
 import {
   CardBody,
@@ -10,58 +10,45 @@ import {
   CardText,
   CardLink,
   ListGroup,
-  ListGroupItem
-} from "reactstrap"
+  ListGroupItem,
+} from "reactstrap";
 
 import { NavLink } from "react-router-dom";
 
-const ApartmentShow = ( { apartments } ) => {
-
+const ApartmentShow = ({ apartments }) => {
   const { id } = useParams();
+  const currentApartment = apartments?.find(
+    (apartment) => apartment.id === +id
+  );
 
-  const apartment = apartments?.find((apartment) => apartment.id === +id);
+  return (
+    <div>
+      <Card
+        style={{
+          width: "18rem",
+        }}
+      >
+        <img alt="Sample" src={currentApartment?.image} />
 
-  return (<div>
-    
-          <Card
-      style={{
-        width: '18rem'
-      }}
-    >
-      <img
-        alt="Sample"
-        src={ apartment.image }
-      />
+        <CardBody>
+          <CardTitle tag="h5">Price:{currentApartment?.price}</CardTitle>
+          <CardText>This is some text within a card body.</CardText>
+        </CardBody>
 
-      <CardBody>
-        <CardTitle tag="h5">
-          Price:{ apartment.price }
-        </CardTitle>
-        <CardText>
-          This is some text within a card body.
-        </CardText>
-      </CardBody>
+        <ListGroup flush>
+          <ListGroupItem>An Home item</ListGroupItem>
+          <ListGroupItem>A second item</ListGroupItem>
+          <ListGroupItem>And a third item</ListGroupItem>
+        </ListGroup>
 
-      <ListGroup flush>
-        <ListGroupItem>
-          An item
-        </ListGroupItem>
-        <ListGroupItem>
-          A second item
-        </ListGroupItem>
-        <ListGroupItem>
-          And a third item
-        </ListGroupItem>
-      </ListGroup>
+        <CardBody>
+          <NavLink to={`/apartmentupdate/${currentApartment?.id}`}>
+            <Button>Update</Button>
+          </NavLink>
+        </CardBody>
+      </Card>
+    </div>
+  );
+};
 
-      <CardBody>
-
-      <NavLink to={`/apartmentupdate/${apartment.id}`}>
-                  <Button>Update</Button></NavLink>
-
-      </CardBody>
-    </Card>
-  </div>)
-}
-
-export default ApartmentShow
+export default ApartmentShow;

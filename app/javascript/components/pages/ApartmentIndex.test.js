@@ -18,7 +18,7 @@ describe("<ApartmentIndex />", () => {
       </BrowserRouter>
     )
 
-    const formShow = screen.getByText("Show")
+    // const formShow = screen.getByText("Show")
 
     // expect(formShow.getAttribute("href")).toEqual("/apartmentshow")
 
